@@ -4,5 +4,8 @@
 #
 #    make upgrade
 #
-django==1.11.29           # via -c requirements/constraints.txt, -r requirements/base.in
+django-crum==0.7.7        # via -r requirements/base.in
+django-ipware==2.1.0      # via -c requirements/constraints.txt, -r requirements/base.in
+django==1.11.29           # via -c requirements/constraints.txt, -r requirements/base.in, django-crum, jsonfield
+jsonfield==2.0.2          # via -c requirements/constraints.txt, -r requirements/base.in
 pytz==2020.1              # via django
