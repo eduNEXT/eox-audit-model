@@ -41,12 +41,12 @@ Audit any execution of a method or function. This will create a database registe
 3. Time stamp. The execute date.
 4. Method name. Method or function name.
 5. Captured log. logs generated in the execution.
-5. Traceback log. If there was an exception, this will contain the traceback.
-6. Site. Current site.
-7. Performer. The user who started the method, this depend on the request.user
-8. Input. The values used to execute the method.
-9. Output. The value returned by the method.
-10. Ip. Current ip.
+6. Traceback log. If there was an exception, this will contain the traceback.
+7. Site. Current site.
+8. Performer. The user who started the method, this depend on the request.user
+9. Input. The values used to execute the method.
+10. Output. The value returned by the method.
+11. Ip. Current ip.
 
 - Example:
 
