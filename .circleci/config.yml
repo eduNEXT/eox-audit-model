@@ -8,8 +8,23 @@ workflows:
   version: 2
   test:
     jobs:
-      - test-3.6
-      - test-2.7
+      - test-3.6:
+          filters:
+            tags:
+              only: /v?[0-9]+(\.[0-9]+)*/
+      - test-2.7:
+          filters:
+            tags:
+              only: /v?[0-9]+(\.[0-9]+)*/
+      - pypi:
+          requires:
+            - test-3.6
+            - test-2.7
+          filters:
+            tags:
+              only: /v?[0-9]+(\.[0-9]+)*/
+            branches:
+              ignore: /.*/
 jobs:
   test-3.6:
     docker:
@@ -80,3 +95,35 @@ jobs:
           command: |
             . venv/bin/activate
             make run-tests
+
+  pypi:
+    docker:
+      - image: circleci/python:3.5
+    steps:
+      - checkout
+      - run:
+          name: Init .pypirc
+          command: |
+            echo $'[distutils]\nindex-servers = pypi\n[pypi]' > ~/.pypirc
+            echo -e "username = $PYPI_USERNAME" >> ~/.pypirc
+            echo -e "password = $PYPI_PASSWORD" >> ~/.pypirc
+      - run:
+          name: Prepare venv for distribution
+          command: |
+            virtualenv venv
+            source venv/bin/activate
+            pip install twine
+      - run:
+          name: Create package
+          command: |
+            python setup.py sdist bdist_wheel
+      - run:
+          name: Check package
+          command: |
+            source venv/bin/activate
+            twine check dist/*
+      - run:
+          name: Upload to pypi
+          command: |
+            source venv/bin/activate
+            twine upload dist/*
