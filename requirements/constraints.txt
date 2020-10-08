@@ -8,8 +8,8 @@
 # pin when possible.  Writing an issue against the offending project and
 # linking to it here is good.
 
-# Django version 2.0.0 dropped support for python 2.7
-Django<2.0
+# Django version 3.0.0 dropped support for python 3.5
+Django<3.0
 
 # Already in python3 standard library
 futures; python_version == "2.7"
@@ -18,6 +18,6 @@ futures; python_version == "2.7"
 pylint==1.9.3
 pycodestyle==2.5.0
 
-#supported in django 1.11
-jsonfield==2.0.2
+# Version used in Juniper version of edx-platform
+jsonfield2==3.0.3
 django-ipware==2.1.0
