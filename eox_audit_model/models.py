@@ -98,7 +98,7 @@ class AuditModel(models.Model):
     method_name = models.CharField(max_length=150)
     output_parameters = models.TextField(null=True, blank=True)
     performer = models.CharField(max_length=150, default=get_current_performer)
-    site = models.ForeignKey(Site, default=get_current_site)
+    site = models.ForeignKey(Site, default=get_current_site, on_delete=models.SET_NULL, null=True)
     status = models.PositiveIntegerField(choices=Status.choices(), default=Status.SUCCESS)
     ip = models.CharField(max_length=150, default=get_current_ip)
 
@@ -196,7 +196,7 @@ class AuditNote(models.Model):
         description: TextField note content.
     """
 
-    audit_register = models.ForeignKey(AuditModel)
+    audit_register = models.ForeignKey(AuditModel, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     created = models.DateTimeField(auto_now=True)
     description = models.TextField(max_length=500, blank=True)
