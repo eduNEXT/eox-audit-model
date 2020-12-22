@@ -8,6 +8,7 @@ Classes:
 import logging
 import traceback
 
+from django.contrib.sites.models import Site
 from django.test import TestCase
 from mock import Mock, patch
 from testfixtures import LogCapture
@@ -32,15 +33,18 @@ class TestGetCurrentSite(TestCase):
             - get_current_request is called once.
         """
         request = Mock()
-        expected_value = 'https://howgarts.com'
+        domain = 'https://howgarts.com'
+        site = Site.objects.create(
+            domain=domain,
+        )
         request.META = {
-            'HTTP_HOST': expected_value,
+            'HTTP_HOST': domain,
         }
         get_current_request_mock.return_value = request
 
         result = get_current_site()
 
-        self.assertEqual(expected_value, result.domain)
+        self.assertEqual(site.id, result)
         get_current_request_mock.assert_called_once()
 
     @patch('eox_audit_model.models.get_current_request')
@@ -52,11 +56,13 @@ class TestGetCurrentSite(TestCase):
             - get_current_request is called once.
         """
         get_current_request_mock.return_value = None
-        expected_value = 'Missing domain.'
+        site = Site.objects.create(
+            domain='Missing domain.',
+        )
 
         result = get_current_site()
 
-        self.assertEqual(expected_value, result.domain)
+        self.assertEqual(site.id, result)
         get_current_request_mock.assert_called_once()
 
 
