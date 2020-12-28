@@ -14,6 +14,15 @@ Unreleased
 
 *
 
+[0.2.1] - 2020-12-28
+--------------------
+
+Fixed
+_____
+
+* Changes made in AuditModel.
+* Added missing migration.
+
 [0.2.0] - 2020-10-23
 --------------------
 

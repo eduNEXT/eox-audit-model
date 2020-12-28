@@ -39,7 +39,7 @@ def get_current_site():
         domain=domain,
     )
 
-    return site
+    return site.id
 
 
 def get_current_ip():
