@@ -29,7 +29,7 @@ class AuditNotesInline(admin.StackedInline):
     readonly_fields = ['title', 'description']
     can_delete = False
 
-    def has_add_permission(self, request):  # pylint: disable=arguments-differ
+    def has_add_permission(self, request):  # pylint: disable=arguments-differ,useless-suppression
         """Adding registers is not allow."""
         return False
 

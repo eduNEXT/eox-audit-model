@@ -12,7 +12,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sites',
-    'eox_audit_model.apps.EoxAuditModelConfig',
+    'eox_audit_model',
 ]
 
 TIME_ZONE = 'UTC'
@@ -47,4 +47,19 @@ LOGGING = {
     },
 }
 
-ALLOW_EOX_AUDIT_MODEL = True
+
+class SettingsClass:  # pylint: disable=old-style-class
+    """ dummy settings class """
+
+
+def plugin_settings(settings):  # pylint: disable=function-redefined
+    """
+    Defines eox-audit-model settings when app is used as a plugin to edx-platform.
+    See: https://github.com/edx/edx-platform/blob/master/openedx/core/djangoapps/plugins/README.rst
+    """
+    settings.ALLOW_EOX_AUDIT_MODEL = True
+
+
+SETTINGS = SettingsClass()
+plugin_settings(SETTINGS)
+vars().update(SETTINGS.__dict__)

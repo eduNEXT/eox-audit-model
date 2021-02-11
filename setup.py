@@ -89,5 +89,10 @@ setup(
     ],
     include_package_data=True,
     install_requires=load_requirements('requirements/base.in'),
+    entry_points={
+            "lms.djangoapp": [
+                "eox_audit_model = eox_audit_model.apps:EoxAuditModelConfig",
+            ],
+    },
     zip_safe=False,
 )
