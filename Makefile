@@ -35,10 +35,6 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 	$(PIP_COMPILE) -o requirements/base.txt requirements/base.in
 	$(PIP_COMPILE) -o requirements/test.txt requirements/test.in
 	$(PIP_COMPILE) -o requirements/tox.txt requirements/tox.in
-	# Let tox control the Django version for tests
-	grep -e "^django==" -e "^jsonfield2==" requirements/test.txt > requirements/django22.txt
-	sed '/^[dD]jango==/d;/^jsonfield2==/d;' requirements/test.txt > requirements/test.tmp
-	mv requirements/test.tmp requirements/test.txt
 
 quality: clean ## check coding style with pycodestyle and pylint
 	$(TOX) pycodestyle ./eox_audit_model

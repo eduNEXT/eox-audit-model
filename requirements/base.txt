@@ -4,7 +4,23 @@
 #
 #    make upgrade
 #
-django-crum==0.7.7        # via -r requirements/base.in
-django-ipware==2.1.0      # via -c requirements/constraints.txt, -r requirements/base.in
-django==1.11.29           # via -c requirements/constraints.txt, -r requirements/base.in, django-crum
-pytz==2020.1              # via django
+django-crum==0.7.9
+    # via -r requirements/base.in
+django-ipware==2.1.0
+    # via
+    #   -c requirements/constraints.txt
+    #   -r requirements/base.in
+django==2.2.20
+    # via
+    #   -c requirements/constraints.txt
+    #   -r requirements/base.in
+    #   django-crum
+    #   jsonfield2
+jsonfield2==3.0.3
+    # via
+    #   -c requirements/constraints.txt
+    #   -r requirements/base.in
+pytz==2021.1
+    # via django
+sqlparse==0.4.1
+    # via django

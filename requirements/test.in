@@ -6,4 +6,3 @@ mock
 pycodestyle
 pylint
 testfixtures
-jsonfield2

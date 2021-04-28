@@ -21,3 +21,9 @@ pycodestyle==2.5.0
 # Version used in Juniper version of edx-platform
 jsonfield2==3.0.3
 django-ipware==2.1.0
+
+#Drop support for python 3.5
+pip-tools<6
+mock<4.0.0
+isort<5.0.0
+lazy-object-proxy<1.6.0
