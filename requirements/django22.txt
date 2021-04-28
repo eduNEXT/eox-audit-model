@@ -1,2 +1,0 @@
-django==2.2.16            # via -c requirements/constraints.txt, -r requirements/base.txt, django-crum, jsonfield2
-jsonfield2==3.0.3         # via -c requirements/constraints.txt, -r requirements/test.in
