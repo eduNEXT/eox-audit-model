@@ -1,6 +1,7 @@
 # Main requirements of your application.
 -c constraints.txt
 
+celery                              # Asynchronous task execution library
 Django
 django-crum
 django-ipware
