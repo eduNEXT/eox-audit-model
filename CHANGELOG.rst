@@ -14,6 +14,14 @@ Unreleased
 
 *
 
+[0.3.0] - 2020-04-29
+--------------------
+
+Change
+______
+
+* The model is created asynchronously in order to avoid atomic blocks.
+
 [0.2.1] - 2020-12-28
 --------------------
 
