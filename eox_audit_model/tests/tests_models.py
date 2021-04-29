@@ -15,7 +15,7 @@ from testfixtures import LogCapture
 
 from eox_audit_model.constants import LOG_FORMAT, Status
 from eox_audit_model.exceptions import EoxAuditModelInvalidMethod, EoxAuditModelInvalidParameters
-from eox_audit_model.models import AuditModel, AuditNote, get_current_ip, get_current_performer, get_current_site
+from eox_audit_model.models import AuditModel, get_current_ip, get_current_performer, get_current_site
 
 LOG = logging.getLogger(__name__)
 
@@ -186,7 +186,7 @@ class TestAuditModel(TestCase):
         with self.assertRaises(EoxAuditModelInvalidParameters):
             AuditModel.execute_action(action, method, parameters)
 
-    @patch.object(AuditModel.objects, 'create')
+    @patch('eox_audit_model.models.create_audit_register')
     def test_valid_method(self, create_mock):
         """Test for execute_action class method, when the method is executed successfully.
 
@@ -208,7 +208,7 @@ class TestAuditModel(TestCase):
         test_logs.setFormatter(logging.Formatter(LOG_FORMAT))
         logs = [test_logs.format(record) for record in test_logs.records]
         self.assertEqual(expected_value, result)
-        create_mock.assert_called_once_with(
+        create_mock.delay.assert_called_once_with(
             action=action,
             status=Status.SUCCESS,
             method_name=method.__name__,
@@ -216,10 +216,11 @@ class TestAuditModel(TestCase):
             traceback_log=traceback.format_exc(),
             input_parameters=parameters,
             output_parameters=str(method(1, 2, 3, 1)),
+            notes=None
         )
 
     @patch('eox_audit_model.models.traceback')
-    @patch.object(AuditModel.objects, 'create')
+    @patch('eox_audit_model.models.create_audit_register')
     def test_method_raise_exception(self, create_mock, traceback_mock):
         """Test for execute_action class method, when the method raises an exception.
 
@@ -243,7 +244,7 @@ class TestAuditModel(TestCase):
         test_logs.setFormatter(logging.Formatter(LOG_FORMAT))
         logs = [test_logs.format(record) for record in test_logs.records]
         traceback_mock.format_exc.assert_called_once()
-        create_mock.assert_called_once_with(
+        create_mock.delay.assert_called_once_with(
             action=action,
             status=Status.FAIL,
             method_name=method.__name__,
@@ -251,33 +252,5 @@ class TestAuditModel(TestCase):
             traceback_log=traceback_mock.format_exc(),
             input_parameters=parameters,
             output_parameters={}.__repr__(),
-        )
-
-    @patch.object(AuditNote.objects, 'create')
-    @patch.object(AuditModel.objects, 'create')
-    def test_notes(self, create_audit_mock, create_note_mock):
-        """Test for execute_action class method, when notes parameter is not None.
-
-        Expected behavior:
-            - AuditNote.objects.create is called with the right parameters.
-        """
-        action = 'Test action.'
-        method = self.valid_method
-        parameters = {
-            'args': (1, 2),
-            'kwargs': {'c': 3, 'd': 1},
-        }
-        notes = [
-            {
-                'title': 'AuditNote',
-                'description': 'this description is store in the audit note model.',
-            },
-        ]
-
-        AuditModel.execute_action(action, method, parameters, notes)
-
-        create_note_mock.assert_called_once_with(
-            audit_register=create_audit_mock(),
-            title='AuditNote',
-            description='this description is store in the audit note model.',
+            notes=None,
         )

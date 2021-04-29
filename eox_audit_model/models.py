@@ -23,6 +23,7 @@ from ipware.ip import get_ip
 from eox_audit_model.constants import Status
 from eox_audit_model.context_managers import capture_logs
 from eox_audit_model.exceptions import EoxAuditModelInvalidMethod, EoxAuditModelInvalidParameters
+from eox_audit_model.tasks import create_audit_register  # pylint: disable=cyclic-import, useless-suppression
 
 
 def get_current_site():
@@ -163,8 +164,8 @@ class AuditModel(models.Model):
             status = Status.FAIL
             raise error
         finally:
-            if getattr(settings, 'ALLOW_EOX_AUDIT_MODEL', False):
-                audit_register = cls.objects.create(
+            if getattr(settings, 'ALLOW_EOX_AUDIT_MODEL', True):
+                create_audit_register.delay(
                     action=action,
                     status=status,
                     method_name=getattr(method, '__name__', 'Missing method name'),
@@ -172,15 +173,8 @@ class AuditModel(models.Model):
                     traceback_log=traceback.format_exc(),
                     input_parameters=parameters,
                     output_parameters=result.__repr__(),
+                    notes=notes
                 )
-
-                if notes and isinstance(notes, list):
-                    for note in notes:
-                        AuditNote.objects.create(
-                            audit_register=audit_register,
-                            title=note.get('title', 'Missing Title'),
-                            description=note.get('description', 'Missing description'),
-                        )
 
 
 class AuditNote(models.Model):
