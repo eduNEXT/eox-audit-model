@@ -18,7 +18,11 @@ from crum import get_current_request, get_current_user
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.db import models
-from ipware.ip import get_ip
+
+try:
+    from ipware.ip import get_ip
+except ImportError:
+    from ipware.ip import get_client_ip as get_ip
 
 from eox_audit_model.constants import Status
 from eox_audit_model.context_managers import capture_logs
@@ -51,7 +55,11 @@ def get_current_ip():
     """
     request = get_current_request()
 
-    return get_ip(request) if request else 'Missing ip.'
+    if request:
+        current_ip = get_ip(request)
+        return current_ip[0] if isinstance(current_ip, tuple) else current_ip
+
+    return 'Missing ip.'
 
 
 def get_current_performer():
