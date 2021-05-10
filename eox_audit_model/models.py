@@ -19,15 +19,16 @@ from django.conf import settings
 from django.contrib.sites.models import Site
 from django.db import models
 
-try:
-    from ipware.ip import get_ip
-except ImportError:
-    from ipware.ip import get_client_ip as get_ip
 
 from eox_audit_model.constants import Status
 from eox_audit_model.context_managers import capture_logs
 from eox_audit_model.exceptions import EoxAuditModelInvalidMethod, EoxAuditModelInvalidParameters
 from eox_audit_model.tasks import create_audit_register  # pylint: disable=cyclic-import, useless-suppression
+
+try:
+    from ipware.ip import get_ip
+except ImportError:
+    from ipware.ip import get_client_ip as get_ip
 
 
 def get_current_site():
