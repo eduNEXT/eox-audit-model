@@ -173,7 +173,10 @@ class AuditModel(models.Model):
                     traceback_log=traceback.format_exc(),
                     input_parameters=parameters,
                     output_parameters=result.__repr__(),
-                    notes=notes
+                    site_id=get_current_site(),
+                    performer=get_current_performer(),
+                    ip=get_current_ip(),
+                    notes=notes,
                 )
 
 

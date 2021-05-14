@@ -12,7 +12,10 @@ Change Log
 Unreleased
 ----------
 
-*
+Fixed
+_____
+
+* Add missing parameters in celery task call.
 
 [0.3.0] - 2020-04-29
 --------------------
