@@ -216,7 +216,10 @@ class TestAuditModel(TestCase):
             traceback_log=traceback.format_exc(),
             input_parameters=parameters,
             output_parameters=str(method(1, 2, 3, 1)),
-            notes=None
+            performer=get_current_performer(),
+            site_id=get_current_site(),
+            ip=get_current_ip(),
+            notes=None,
         )
 
     @patch('eox_audit_model.models.traceback')
@@ -252,5 +255,8 @@ class TestAuditModel(TestCase):
             traceback_log=traceback_mock.format_exc(),
             input_parameters=parameters,
             output_parameters={}.__repr__(),
+            performer=get_current_performer(),
+            site_id=get_current_site(),
+            ip=get_current_ip(),
             notes=None,
         )

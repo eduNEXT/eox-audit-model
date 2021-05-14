@@ -7,16 +7,7 @@ from celery import shared_task
 
 
 @shared_task
-def create_audit_register(
-    action,
-    status,
-    method_name,
-    captured_logs,
-    traceback_log,
-    input_parameters,
-    output_parameters,
-    notes,
-):
+def create_audit_register(action, status, method_name, **kwargs):
     """Allow to create an Audit model register asynchronously by using the given parameters
 
     Arguments:
@@ -31,14 +22,13 @@ def create_audit_register(
     """
     from eox_audit_model.models import AuditModel, AuditNote
 
+    notes = kwargs.pop('notes')
+
     audit_register = AuditModel.objects.create(
         action=action,
         status=status,
         method_name=method_name,
-        captured_logs=captured_logs,
-        traceback_log=traceback_log,
-        input_parameters=input_parameters,
-        output_parameters=output_parameters,
+        **kwargs
     )
 
     if notes and isinstance(notes, list):
