@@ -12,6 +12,12 @@ Change Log
 Unreleased
 ----------
 
+Added
+_______
+
+* Added support for django-ipware 3.0.0 .
+
+
 [0.3.1] - 2020-05-18
 --------------------
 
