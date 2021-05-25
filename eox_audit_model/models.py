@@ -18,7 +18,7 @@ from crum import get_current_request, get_current_user
 from django.conf import settings
 from django.contrib.sites.models import Site
 from django.db import models
-from ipware.ip import get_ip
+from ipware import ip
 
 from eox_audit_model.constants import Status
 from eox_audit_model.context_managers import capture_logs
@@ -51,7 +51,18 @@ def get_current_ip():
     """
     request = get_current_request()
 
-    return get_ip(request) if request else 'Missing ip.'
+    if not request:
+        return 'Missing ip.'
+
+    try:
+        # Works with django-ipware lower than 3.0.0
+        get_ip = getattr(ip, 'get_ip')
+
+        return get_ip(request)
+    except AttributeError:
+        get_client_ip = getattr(ip, 'get_client_ip')
+
+    return get_client_ip(request)[0]
 
 
 def get_current_performer():
