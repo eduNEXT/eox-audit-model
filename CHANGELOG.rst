@@ -12,13 +12,16 @@ Change Log
 Unreleased
 ----------
 
+[0.4.0] - 2021-05-24
+--------------------
+
 Added
 _______
 
 * Added support for django-ipware 3.0.0 .
 
 
-[0.3.1] - 2020-05-18
+[0.3.1] - 2021-05-18
 --------------------
 
 Fixed
@@ -26,7 +29,7 @@ _____
 
 * Add missing parameters in celery task call.
 
-[0.3.0] - 2020-04-29
+[0.3.0] - 2021-04-29
 --------------------
 
 Change
