@@ -12,6 +12,13 @@ Change Log
 Unreleased
 ----------
 
+Added
+-----
+
+* Display date in admin list view and use date format with ms
+* Include an API wrapper to be used in API views to record the request data.
+  Add an option to record sensitive data without the actual value.
+
 [0.4.0] - 2021-05-24
 --------------------
 

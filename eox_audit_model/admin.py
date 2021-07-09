@@ -65,6 +65,13 @@ class AuditAdmin(admin.ModelAdmin):
         list_filter: Define the admin filters.
     """
 
+    def timestamp_microseconds(self, obj):
+        """Format date with microseconds"""
+        return obj.audit_date_stamp.strftime("%Y-%m-%d %H:%M:%S.%f")
+
+    timestamp_microseconds.short_description = 'Audit date stamp'
+    timestamp_microseconds.admin_order_field = 'audit_date_stamp'
+
     inlines = (AuditNotesInline, AddAuditNotesInline)
     list_display = [
         'status',
@@ -72,6 +79,7 @@ class AuditAdmin(admin.ModelAdmin):
         'action',
         'performer',
         'site',
+        'timestamp_microseconds'
     ]
 
     search_fields = [
@@ -94,7 +102,7 @@ class AuditAdmin(admin.ModelAdmin):
         'input_parameters',
         'output_parameters',
         'traceback_log',
-        'audit_date_stamp',
+        'timestamp_microseconds',
         'ip',
     ]
 
@@ -108,7 +116,7 @@ class AuditAdmin(admin.ModelAdmin):
         'output_parameters',
         'captured_logs',
         'traceback_log',
-        'audit_date_stamp',
+        'timestamp_microseconds',
         'ip',
     ]
 
