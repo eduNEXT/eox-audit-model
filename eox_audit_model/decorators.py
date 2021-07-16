@@ -70,14 +70,19 @@ def audit_drf_api(action='', data_filter=None, hidden_fields=None, method_name='
             request = args[1]
             data = request.data if request.data else request.query_params
 
-            audit_data = {
-                key: value
-                for key, value in data.items()
-                if data_filter and key in data_filter
-            }
-            audit_data.update(
-                {key: '*****' for key in data if hidden_fields and key in hidden_fields}
-            )
+            # TODO: This is a hotfix. Consider addding all the filtered data for all items
+            # in the list.
+            if isinstance(data, list):
+                audit_data = None
+            else:
+                audit_data = {
+                    key: value
+                    for key, value in data.items()
+                    if data_filter and key in data_filter
+                }
+                audit_data.update(
+                    {key: '*****' for key in data if hidden_fields and key in hidden_fields}
+                )
 
             @audit_method(action=action)
             @rename_function(name=method_name)
