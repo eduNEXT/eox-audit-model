@@ -12,6 +12,16 @@ Change Log
 Unreleased
 ----------
 
+[0.6.0] - 2021-08-18
+--------------------
+
+Added
+-----
+
+* Support for batch requests. Handle lists in request data.
+* Include new argument in decorator to show all the input parameters from the request.
+
+
 [0.5.1] - 2021-07-16
 --------------------
 
