@@ -32,6 +32,20 @@ Installation
   python manage.py migrate
 
 
+Open edX devstack compatibility notes
+--------------------------------------
+
++-------------------+----------+
+| Open edX Release  |  Version |
++===================+==========+
+|       Juniper     |   >= 0.2 |
++-------------------+----------+
+|        Koa        |   >= 0.7 |
++-------------------+----------+
+|       Lilac       |   >= 0.7 |
++-------------------+----------+
+
+
 Usage
 #####
 Audit any execution of a method or function. This will create a database register with the following information:
