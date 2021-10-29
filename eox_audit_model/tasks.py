@@ -20,7 +20,7 @@ def create_audit_register(action, status, method_name, **kwargs):
         output_parameters: <Dict> Method output.
         notes: <List> List of dict, with the notes information.
     """
-    from eox_audit_model.models import AuditModel, AuditNote
+    from eox_audit_model.models import AuditModel, AuditNote  # pylint: disable=import-outside-toplevel
 
     notes = kwargs.pop('notes')
 

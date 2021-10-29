@@ -14,17 +14,20 @@ Django<3.0
 # Already in python3 standard library
 futures; python_version == "2.7"
 
-# TODO: Add constraint explanation
-pylint==1.9.3
-pycodestyle==2.5.0
-
 # Version used in Juniper version of edx-platform
 jsonfield2==3.0.3
 django-ipware==2.1.0
 
-#Drop support for python 3.5
+# Drop support for python 3.5
+pylint<2.7.0
 pip-tools<6
 mock<4.0.0
 isort<5.0.0
 lazy-object-proxy<1.6.0
 celery<5.0.0
+filelock<3.3.0
+packaging<21.0
+platformdirs<2.1.0
+pluggy<1.0.0
+pyparsing<3.0.0
+coverage<6.0.0

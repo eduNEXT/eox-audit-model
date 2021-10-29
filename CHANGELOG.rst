@@ -12,6 +12,16 @@ Change Log
 Unreleased
 ----------
 
+[0.7.0] - 2021-10-26
+--------------------
+
+Added
+-----
+
+* Tests for python 3.8.
+* Compatibility notes to readme.
+
+
 [0.6.0] - 2021-08-18
 --------------------
 
