@@ -12,25 +12,24 @@ Installation
 
 1. Install eox-audit-model:
 
-.. code-block:: python
+    .. code-block:: python
 
-  pip install eox-audit-model
+      pip install eox-audit-model
 
 2. Add “eox_audit_model” to your INSTALLED_APPS:
 
-.. code-block:: python
+    .. code-block:: python
 
-  INSTALLED_APPS = [
-          ...
-         'eox_audit_model',
-  ]
+      INSTALLED_APPS = [
+              ...
+            'eox_audit_model',
+      ]
 
 3. Run Migrate:
 
-.. code-block:: python
+    .. code-block:: python
 
-  python manage.py migrate
-
+      python manage.py migrate
 
 Open edX devstack compatibility notes
 --------------------------------------
@@ -84,7 +83,7 @@ Audit any execution of a method or function. This will create a database registe
     ...
 
 Decorator
-=========
+#########
 There is a simple decorator, which can perform the same process.
 
 - Example:
