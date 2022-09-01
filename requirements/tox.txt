@@ -38,7 +38,7 @@ six==1.16.0
     #   virtualenv
 toml==0.10.2
     # via tox
-tox==3.24.4
+tox==3.24.5
     # via -r requirements/tox.in
 virtualenv==20.9.0
     # via tox
