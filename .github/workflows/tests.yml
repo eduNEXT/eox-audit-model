@@ -31,7 +31,7 @@ jobs:
 
       - name: Install Dev Requirements
         run: |
-          make python-test
+          make install-dev-dependencies
       - name: Run Python Tests
         run: |
             export TOXENV=${TOX_ENV//./}
