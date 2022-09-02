@@ -4,9 +4,6 @@
 #
 #    make upgrade
 #
---index-url http://edx.devstack.devpi:3141/root/pypi/+simple/
---extra-index-url https://pypi.python.org/simple
---trusted-host edx.devstack.devpi
 
 backports.entry-points-selectable==1.1.0
     # via virtualenv
@@ -41,7 +38,7 @@ six==1.16.0
     #   virtualenv
 toml==0.10.2
     # via tox
-tox==3.24.4
+tox==3.24.5
     # via -r requirements/tox.in
 virtualenv==20.9.0
     # via tox
