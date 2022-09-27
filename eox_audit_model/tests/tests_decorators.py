@@ -27,7 +27,7 @@ class TestAuditMethod(TestCase):
 
         # The method does not return anything.
         # however due to the decorator the value will be returned by execute_action
-        result = test_method()  # pylint: disable=assignment-from-no-return
+        result = test_method()
 
         execute_action_mock.assert_called_once()
         self.assertEqual(
