@@ -54,13 +54,7 @@ def get_current_ip():
     if not request:
         return 'Missing ip.'
 
-    try:
-        # Works with django-ipware lower than 3.0.0
-        get_ip = getattr(ip, 'get_ip')
-
-        return get_ip(request)
-    except AttributeError:
-        get_client_ip = getattr(ip, 'get_client_ip')
+    get_client_ip = getattr(ip, 'get_client_ip')
 
     return get_client_ip(request)[0]
 
