@@ -1,11 +1,16 @@
 ==========================
 Django eduNEXT Audit Model
 ==========================
-.. image:: https://circleci.com/gh/eduNEXT/eox-audit-model.svg?style=shield
-    :target: https://circleci.com/gh/eduNEXT/eox-audit-model
 
-.. image:: https://codecov.io/gh/eduNEXT/eox-audit-model/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/eduNEXT/eox-audit-model
+.. image:: https://github.com/eduNEXT/eox-audit-model/actions/workflows/tests.yml/badge.svg
+   :target: https://github.com/eduNEXT/eox-audit-model/actions/workflows/tests.yml
+
+
+.. image:: https://github.com/eduNEXT/eox-audit-model/actions/workflows/bump_version.yml/badge.svg
+    :target: https://github.com/eduNEXT/eox-audit-model/actions/workflows/bump_version.yml
+
+.. image:: https://github.com/eduNEXT/eox-audit-model/actions/workflows/python-publish.yml/badge.svg
+    :target: https://github.com/eduNEXT/eox-audit-model/actions/workflows/python-publish.yml
 
 Installation
 ############
