@@ -51,7 +51,7 @@ def rename_function(name=''):
     return decorator
 
 
-def audit_drf_api(  # pylint: disable=unused-argument
+def audit_drf_api(
     action='',
     data_filter=None,
     hidden_fields=None,
@@ -70,9 +70,9 @@ def audit_drf_api(  # pylint: disable=unused-argument
         def get(self, request, *args, **kwargs):
             ...
     """
-    def decorator(func):  # pylint: disable=missing-docstring
+    def decorator(func):
         @wraps(func)
-        def wrapper(*args, **kwargs):  # pylint: disable=missing-docstring
+        def wrapper(*args, **kwargs):
             nonlocal data_filter, hidden_fields
             request = args[1]
             input_parameters = []

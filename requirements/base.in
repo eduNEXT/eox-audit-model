@@ -5,4 +5,4 @@ celery                              # Asynchronous task execution library
 Django
 django-crum
 django-ipware
-jsonfield2
+jsonfield

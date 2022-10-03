@@ -71,27 +71,6 @@ class TestGetCurrentIp(TestCase):
 
     @patch('eox_audit_model.models.ip')
     @patch('eox_audit_model.models.get_current_request')
-    def test_valid_request(self, get_current_request_mock, ip_mock):
-        """This method tests when the request is not None.
-
-        Expected behavior:
-            - Return expected value.
-            - get_current_request is called once.
-            - get_ip is called once.
-        """
-        request = Mock()
-        expected_value = '192.163.45.67'
-        ip_mock.get_ip.return_value = expected_value
-        get_current_request_mock.return_value = request
-
-        result = get_current_ip()
-
-        self.assertEqual(expected_value, result)
-        get_current_request_mock.assert_called_once()
-        ip_mock.get_ip.assert_called_once_with(request)
-
-    @patch('eox_audit_model.models.ip')
-    @patch('eox_audit_model.models.get_current_request')
     def test_valid_request_with_get_client(self, get_current_request_mock, ip_mock):
         """This method tests get_client_ip for django-ipware major or equals to 3.0.0
 
@@ -102,7 +81,6 @@ class TestGetCurrentIp(TestCase):
         """
         request = Mock()
         expected_value = '192.163.45.67'
-        ip_mock.get_ip.side_effect = AttributeError()
         ip_mock.get_client_ip.return_value = (expected_value, )
         get_current_request_mock.return_value = request
 
@@ -112,15 +90,13 @@ class TestGetCurrentIp(TestCase):
         get_current_request_mock.assert_called_once()
         ip_mock.get_client_ip.assert_called_once_with(request)
 
-    @patch('eox_audit_model.models.ip')
     @patch('eox_audit_model.models.get_current_request')
-    def test_invalid_request(self, get_current_request_mock, ip_mock):
+    def test_invalid_request(self, get_current_request_mock):
         """This method tests when the request is None.
 
         Expected behavior:
             - Return expected value.
             - get_current_request is called once.
-            - get_ip is not called.
         """
         get_current_request_mock.return_value = None
         expected_value = 'Missing ip.'
@@ -129,7 +105,6 @@ class TestGetCurrentIp(TestCase):
 
         self.assertEqual(expected_value, result)
         get_current_request_mock.assert_called_once()
-        ip_mock.get_ip.assert_not_called()
 
 
 class TestGetCurrentPerformer(TestCase):

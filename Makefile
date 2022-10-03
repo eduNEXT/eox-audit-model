@@ -42,7 +42,7 @@ upgrade: ## update the requirements/*.txt files with the latest packages satisfy
 quality: clean ## check coding style with pycodestyle and pylint
 	$(TOX) pycodestyle ./eox_audit_model
 	$(TOX) pylint ./eox_audit_model --rcfile=./setup.cfg
-	$(TOX) isort --check-only --recursive --diff ./eox_audit_model
+	$(TOX) isort --check-only --diff ./eox_audit_model
 
 python-test: clean ## Run test suite.
 	$(TOX) pip install -r requirements/test.txt --exists-action w

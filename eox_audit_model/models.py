@@ -54,13 +54,7 @@ def get_current_ip():
     if not request:
         return 'Missing ip.'
 
-    try:
-        # Works with django-ipware lower than 3.0.0
-        get_ip = getattr(ip, 'get_ip')
-
-        return get_ip(request)
-    except AttributeError:
-        get_client_ip = getattr(ip, 'get_client_ip')
+    get_client_ip = getattr(ip, 'get_client_ip')
 
     return get_client_ip(request)[0]
 
@@ -180,7 +174,7 @@ class AuditModel(models.Model):
                     action=action,
                     status=status,
                     method_name=getattr(method, '__name__', 'Missing method name'),
-                    captured_logs='\n'.join(logs.formatted_records),
+                    captured_logs='\n'.join(logs.formatted_records),   # pylint: disable=used-before-assignment
                     traceback_log=traceback.format_exc(),
                     input_parameters=parameters,
                     output_parameters=result.__repr__(),
