@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v2.0.0 - 2023-01-27
+
+### [2.0.0](https://github.com/eduNEXT/eox-audit-model/compare/v1.0.0...v2.0.0) (2023-01-27)
+
+#### ⚠ BREAKING CHANGES
+
+- **DS-368:** add compatibility with olive
+
+#### Performance Improvements
+
+- **DS-368:** add support for olive Open edX release ([#24](https://github.com/eduNEXT/eox-audit-model/issues/24)) ([e4b6e4c](https://github.com/eduNEXT/eox-audit-model/commit/e4b6e4cae097aa769435fd40342964a1d120ebca))
+
+#### Continuous Integration
+
+- adds mantainer group ([64e8904](https://github.com/eduNEXT/eox-audit-model/commit/64e8904c13683846a8f432de484ffbcedb0bc4ea))
+- update the changelog updater step in bumpversion ([#21](https://github.com/eduNEXT/eox-audit-model/issues/21)) ([92ee961](https://github.com/eduNEXT/eox-audit-model/commit/92ee96127ed31972b2a3353e153ab604d6bdea81))
+
 ## v1.0.0 - 2022-10-03
 
 ### [1.0.0](https://github.com/eduNEXT/eox-audit-model/compare/v0.7.3...v1.0.0) (2022-10-03)
