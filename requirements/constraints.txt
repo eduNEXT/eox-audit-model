@@ -8,18 +8,11 @@
 # pin when possible.  Writing an issue against the offending project and
 # linking to it here is good.
 
-# Django version 3.0.0 dropped support for python 3.5
-Django<3.3
+# Use same versions as edx-platform release
 
-
-# Version used in Nutmeg version of edx-platform
-# Drop support for python 3.5
+Django<4.0
 celery>=5.2.2,<6.0.0
 pylint<2.14
-pip-tools<6.7
-pep517<0.13
 pycodestyle<2.9
 pytz<2022.2
 testfixtures<6.19
-typing-extensions<4.2
-wrapt<1.12
