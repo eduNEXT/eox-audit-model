@@ -96,11 +96,11 @@ def audit_drf_api(
 
             @audit_method(action=action)
             @rename_function(name=method_name)
-            def api_method(*input_parameters):  # pylint: disable=unused-argument
+            def api_method(*input_parameters, absolute_uri=""):  # pylint: disable=unused-argument
                 """This method is just a wrapper in order to capture the input data"""
                 return func(*args, **kwargs)
 
-            return api_method(*input_parameters)
+            return api_method(*input_parameters, absolute_uri=request.build_absolute_uri())
 
         return wrapper
 
