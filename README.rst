@@ -11,6 +11,8 @@ Django eduNEXT Audit Model
 
 .. image:: https://github.com/eduNEXT/eox-audit-model/actions/workflows/python-publish.yml/badge.svg
     :target: https://github.com/eduNEXT/eox-audit-model/actions/workflows/python-publish.yml
+    
+.. image:: https://img.shields.io/badge/Status-Maintained-brightgreen
 
 Installation
 ############
