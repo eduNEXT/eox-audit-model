@@ -12,7 +12,7 @@
 
 Django<4.0
 celery>=5.2.2,<6.0.0
-pylint<2.14
-pycodestyle<2.9
-pytz<2022.2
-testfixtures<6.19
+pylint<2.16.0
+pycodestyle<2.9.0
+pytz<2023
+testfixtures==7.1.0
