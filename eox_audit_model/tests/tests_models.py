@@ -251,7 +251,7 @@ class TestAuditModel(TestCase):
             captured_logs='\n'.join(logs),
             traceback_log=traceback_mock.format_exc(),
             input_parameters=parameters,
-            output_parameters={}.__repr__(),
+            output_parameters=repr({}),
             performer=get_current_performer(),
             site_id=get_current_site(),
             ip=get_current_ip(),

@@ -177,7 +177,7 @@ class AuditModel(models.Model):
                     captured_logs='\n'.join(logs.formatted_records),   # pylint: disable=used-before-assignment
                     traceback_log=traceback.format_exc(),
                     input_parameters=parameters,
-                    output_parameters=result.__repr__(),
+                    output_parameters=repr(result),
                     site_id=get_current_site(),
                     performer=get_current_performer(),
                     ip=get_current_ip(),
