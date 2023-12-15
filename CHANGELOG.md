@@ -5,6 +5,35 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v3.0.0 - 2023-12-15
+
+### [3.0.0](https://github.com/eduNEXT/eox-audit-model/compare/v2.0.0...v3.0.0) (2023-12-15)
+
+#### ⚠ BREAKING CHANGES
+
+* add compatibility with palm release
+  
+* ci: update dependencies of GitHub actions
+  
+* docs: update readme file
+  
+* fix: message_control wasn't being used
+  
+* refactor: allow 120 characters per line when Pylint is executed
+  
+* refactor:  fix Pylint warnings
+  
+* chore: update requirements
+  
+
+#### Performance Improvements
+
+* add compatibility with palm release ([#27](https://github.com/eduNEXT/eox-audit-model/issues/27)) ([c4bff09](https://github.com/eduNEXT/eox-audit-model/commit/c4bff09c739ea9476f8bb803a21d40a49727ed4b))
+
+#### Documentation
+
+* adds status label to readme file ([462061c](https://github.com/eduNEXT/eox-audit-model/commit/462061c9bf9e6cae27dc6c7305aa1c50bae28c1b))
+
 ## v2.0.0 - 2023-01-27
 
 ### [2.0.0](https://github.com/eduNEXT/eox-audit-model/compare/v1.0.0...v2.0.0) (2023-01-27)
