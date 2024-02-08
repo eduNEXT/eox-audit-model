@@ -12,12 +12,13 @@ asgiref==3.7.2
     # via
     #   -r requirements/base.txt
     #   django
-astroid==2.13.5
+astroid==2.15.8
     # via pylint
 backports-zoneinfo[tzdata]==0.2.1
     # via
     #   -r requirements/base.txt
     #   celery
+    #   django
     #   kombu
 billiard==4.2.0
     # via
@@ -50,7 +51,7 @@ coverage==7.4.1
     # via -r requirements/test.in
 dill==0.3.8
     # via pylint
-django==3.2.24
+django==4.2.10
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
@@ -84,7 +85,7 @@ pycodestyle==2.8.0
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.in
-pylint==2.15.10
+pylint==2.17.7
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.in
@@ -96,11 +97,6 @@ python-ipware==2.0.1
     # via
     #   -r requirements/base.txt
     #   django-ipware
-pytz==2022.7.1
-    # via
-    #   -c requirements/constraints.txt
-    #   -r requirements/base.txt
-    #   django
 six==1.16.0
     # via
     #   -r requirements/base.txt
