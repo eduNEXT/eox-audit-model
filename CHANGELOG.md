@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v4.0.0 - 2024-02-13
+
+### [4.0.0](https://github.com/eduNEXT/eox-audit-model/compare/v3.1.0...v4.0.0) (2024-02-13)
+
+#### ⚠ BREAKING CHANGES
+
+* add compatibility with quince release
+  
+* perf: update requirements and readme
+  
+* perf: update requirements
+  
+* perf: update requirements
+  
+* perf: update requirements
+  
+* perf: update labeler version
+  
+* fix: update actions/setup-python version
+  
+
+#### Performance Improvements
+
+* quince release support ([#28](https://github.com/eduNEXT/eox-audit-model/issues/28)) ([62a9b3e](https://github.com/eduNEXT/eox-audit-model/commit/62a9b3ef1e9ab38848a020dc677f1e23f479c197))
+
 ## v3.1.0 - 2024-01-12
 
 ### [3.1.0](https://github.com/eduNEXT/eox-audit-model/compare/v3.0.0...v3.1.0) (2024-01-12)
