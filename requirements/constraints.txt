@@ -10,9 +10,9 @@
 
 # Use same versions as edx-platform release
 
-Django<4.0
+Django<5.0
 celery>=5.2.2,<6.0.0
-pylint<2.16.0
+pylint<3.0
 pycodestyle<2.9.0
 pytz<2023
 testfixtures==7.1.0
