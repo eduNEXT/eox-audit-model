@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v4.1.0 - 2024-03-19
+
+### [4.1.0](https://github.com/eduNEXT/eox-audit-model/compare/v4.0.0...v4.1.0) (2024-03-19)
+
+#### Features
+
+* add workflow to add items to the Dedalo project DS-831 ([#29](https://github.com/eduNEXT/eox-audit-model/issues/29)) ([4ca38ca](https://github.com/eduNEXT/eox-audit-model/commit/4ca38cafeda4941ff755685d8258c24895ceb28f))
+
 ## v4.0.0 - 2024-02-13
 
 ### [4.0.0](https://github.com/eduNEXT/eox-audit-model/compare/v3.1.0...v4.0.0) (2024-02-13)
