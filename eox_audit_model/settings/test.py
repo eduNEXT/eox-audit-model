@@ -4,11 +4,6 @@ Test Django settings for eox_audit_model project.
 
 from __future__ import unicode_literals
 
-import codecs
-import os
-
-import yaml
-
 from .common import *  # pylint: disable=wildcard-import
 
 ALLOWED_HOSTS = ['*']
