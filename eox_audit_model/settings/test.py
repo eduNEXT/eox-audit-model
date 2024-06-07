@@ -55,6 +55,7 @@ LOGGING = {
 ALLOW_EOX_AUDIT_MODEL = True
 CELERY_TASK_ALWAYS_EAGER = False
 
+
 def plugin_settings(settings):  # pylint: disable=function-redefined
     """
     For the platform tests
