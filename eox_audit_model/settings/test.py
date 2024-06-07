@@ -54,14 +54,3 @@ LOGGING = {
 
 ALLOW_EOX_AUDIT_MODEL = True
 CELERY_TASK_ALWAYS_EAGER = False
-
-
-def plugin_settings(settings):  # pylint: disable=function-redefined
-    """
-    For the platform tests
-    """
-    # setup the databases used in the tutor local environment
-    if os.environ['LMS_CFG']:
-        with codecs.open(os.environ['LMS_CFG'], encoding='utf-8') as f:
-            env_tokens = yaml.safe_load(f)
-        settings.DATABASES = env_tokens['DATABASES']
