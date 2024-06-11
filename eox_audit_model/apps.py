@@ -13,3 +13,19 @@ class EoxAuditModelConfig(AppConfig):
     """
     name = 'eox_audit_model'
     verbose_name = 'Django eduNEXT Audit Model'
+    
+    plugin_app = {
+        'settings_config': {
+            'lms.djangoapp': {
+                'common': {'relative_path': 'settings.common'},
+                'test': {'relative_path': 'settings.test'},
+                'production': {'relative_path': 'settings.production'},
+                'devstack': {'relative_path': 'settings.devstack'},
+            },
+            'cms.djangoapp': {
+                'common': {'relative_path': 'settings.common'},
+                'test': {'relative_path': 'settings.test'},
+                'production': {'relative_path': 'settings.production'},
+            },
+        }
+    }
