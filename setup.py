@@ -90,5 +90,8 @@ setup(
         "lms.djangoapp": [
             'eox_audit_model = eox_audit_model.apps:EoxAuditModelConfig',
         ],
+        "cms.djangoapp": [
+            'eox_audit_model = eox_audit_model.apps:EoxAuditModelConfig',
+        ],
     }
 )
