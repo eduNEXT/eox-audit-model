@@ -97,6 +97,8 @@ python-ipware==2.0.1
     # via
     #   -r requirements/base.txt
     #   django-ipware
+pyyaml==6.0.1
+    # via -r requirements/test.in
 six==1.16.0
     # via
     #   -r requirements/base.txt
