@@ -1,21 +1,27 @@
 ==========================
-Django eduNEXT Audit Model
+Django edunext audit model
 ==========================
 
-.. image:: https://github.com/eduNEXT/eox-audit-model/actions/workflows/tests.yml/badge.svg
-   :target: https://github.com/eduNEXT/eox-audit-model/actions/workflows/tests.yml
+|Maintainance Badge| |Test Badge| |PyPI Badge|
 
+.. |Maintainance Badge| image:: https://img.shields.io/badge/Status-Maintained-brightgreen
+   :alt: Maintainance Status
+.. |Test Badge| image:: https://img.shields.io/github/actions/workflow/status/edunext/eox-audit-model/.github%2Fworkflows%2Ftests.yml?label=Test
+   :alt: GitHub Actions Workflow Test Status
+.. |PyPI Badge| image:: https://img.shields.io/pypi/v/eox-audit-model?label=PyPI
+   :alt: PyPI - Version
+   
+Eox audit model is a Django application that provides an audit model for tracking and logging changes within the Open edX platform.
+This plugin is designed to help administrators and developers maintain a comprehensive audit trail of various operations, ensuring better monitoring.
 
-.. image:: https://github.com/eduNEXT/eox-audit-model/actions/workflows/bump_version.yml/badge.svg
-    :target: https://github.com/eduNEXT/eox-audit-model/actions/workflows/bump_version.yml
+Features
+========
 
-.. image:: https://github.com/eduNEXT/eox-audit-model/actions/workflows/python-publish.yml/badge.svg
-    :target: https://github.com/eduNEXT/eox-audit-model/actions/workflows/python-publish.yml
-
-.. image:: https://img.shields.io/badge/Status-Maintained-brightgreen
+- Tracks changes to specified models.
+- Logs detailed information about create, update, and delete operations.
 
 Installation
-############
+============
 
 1. Install eox-audit-model:
 
@@ -37,6 +43,7 @@ Installation
     .. code-block:: python
 
       python manage.py migrate eox_audit_model
+
 
 Open edX compatibility notes
 ----------------------------
@@ -65,20 +72,21 @@ Open edX compatibility notes
 
 
 Usage
-#####
+=====
+
 Audit any execution of a method or function. This will create a database register with the following information:
 
-1. Status. If the process was successful or not.
-2. Action. The string given to identify the process.
-3. Time stamp. The execute date.
-4. Method name. Method or function name.
-5. Captured log. logs generated in the execution.
-6. Traceback log. If there was an exception, this will contain the traceback.
-7. Site. Current site.
-8. Performer. The user who started the method, this depend on the request.user
-9. Input. The values used to execute the method.
-10. Output. The value returned by the method.
-11. Ip. Current ip.
+#. **Status**: If the process was successful or not.
+#. **Action**: The given string to identify the process.
+#. **Timestamp**: The execute date.
+#. **Method name**: Method or function name.
+#. **Captured log**: Logs generated in the execution.
+#. **Traceback log**: If there is an exception, this will contain the traceback.
+#. **Site**: Current site.
+#. **Performer**: The user who started the method; depends on the *request.user*.
+#. **Input**: The values used to execute the method.
+#. **Output**: The value returned by the method.
+#. **Ip**: Current IP.
 
 - Example:
 
@@ -102,7 +110,7 @@ Audit any execution of a method or function. This will create a database registe
     ...
 
 Decorator
-#########
+---------
 There is a simple decorator, which can perform the same process.
 
 - Example:
@@ -121,8 +129,7 @@ There is a simple decorator, which can perform the same process.
     expected_value = any_method(3, 6, 9)
     ...
 
+License
+=======
 
-Contributing
-############
-
-Add your contribution policy. (If required)
+This software is licensed under the terms of the AGPLv3. See the LICENSE file for details.
