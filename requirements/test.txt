@@ -8,7 +8,7 @@ amqp==5.2.0
     # via
     #   -r requirements/base.txt
     #   kombu
-asgiref==3.7.2
+asgiref==3.8.1
     # via
     #   -r requirements/base.txt
     #   django
@@ -17,6 +17,7 @@ astroid==2.15.8
 backports-zoneinfo[tzdata]==0.2.1
     # via
     #   -r requirements/base.txt
+    #   backports-zoneinfo
     #   celery
     #   django
     #   kombu
@@ -24,7 +25,7 @@ billiard==4.2.0
     # via
     #   -r requirements/base.txt
     #   celery
-celery==5.3.6
+celery==5.4.0
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
@@ -35,7 +36,7 @@ click==8.1.7
     #   click-didyoumean
     #   click-plugins
     #   click-repl
-click-didyoumean==0.3.0
+click-didyoumean==0.3.1
     # via
     #   -r requirements/base.txt
     #   celery
@@ -47,11 +48,11 @@ click-repl==0.3.0
     # via
     #   -r requirements/base.txt
     #   celery
-coverage==7.4.1
+coverage==7.5.3
     # via -r requirements/test.in
 dill==0.3.8
     # via pylint
-django==4.2.10
+django==4.2.13
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
@@ -59,13 +60,13 @@ django==4.2.10
     #   jsonfield
 django-crum==0.7.9
     # via -r requirements/base.txt
-django-ipware==6.0.4
+django-ipware==7.0.1
     # via -r requirements/base.txt
 isort==5.13.2
     # via pylint
 jsonfield==3.1.0
     # via -r requirements/base.txt
-kombu==5.3.5
+kombu==5.3.7
     # via
     #   -r requirements/base.txt
     #   celery
@@ -75,9 +76,9 @@ mccabe==0.7.0
     # via pylint
 mock==5.1.0
     # via -r requirements/test.in
-platformdirs==4.2.0
+platformdirs==4.2.2
     # via pylint
-prompt-toolkit==3.0.43
+prompt-toolkit==3.0.47
     # via
     #   -r requirements/base.txt
     #   click-repl
@@ -89,11 +90,11 @@ pylint==2.17.7
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.in
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via
     #   -r requirements/base.txt
     #   celery
-python-ipware==2.0.1
+python-ipware==3.0.0
     # via
     #   -r requirements/base.txt
     #   django-ipware
@@ -103,26 +104,26 @@ six==1.16.0
     # via
     #   -r requirements/base.txt
     #   python-dateutil
-sqlparse==0.4.4
+sqlparse==0.5.0
     # via
     #   -r requirements/base.txt
     #   django
-testfixtures==7.1.0
+testfixtures==8.2.0
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.in
 tomli==2.0.1
     # via pylint
-tomlkit==0.12.3
+tomlkit==0.12.5
     # via pylint
-typing-extensions==4.9.0
+typing-extensions==4.12.2
     # via
     #   -r requirements/base.txt
     #   asgiref
     #   astroid
     #   kombu
     #   pylint
-tzdata==2023.4
+tzdata==2024.1
     # via
     #   -r requirements/base.txt
     #   backports-zoneinfo
