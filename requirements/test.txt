@@ -14,10 +14,10 @@ asgiref==3.8.1
     #   django
 astroid==2.15.8
     # via pylint
-backports-zoneinfo[tzdata]==0.2.1
+backports-zoneinfo[tzdata]==0.2.1 ; python_version < "3.9"
     # via
+    #   -c requirements/constraints.txt
     #   -r requirements/base.txt
-    #   backports-zoneinfo
     #   celery
     #   django
     #   kombu
@@ -54,6 +54,7 @@ dill==0.3.8
     # via pylint
 django==4.2.13
     # via
+    #   -c https://raw.githubusercontent.com/openedx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   django-crum
