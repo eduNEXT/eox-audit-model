@@ -9,9 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Redwood Support**: Upgrade requirements base on edx-platform redwood
-  release, update github workflows with new python (3.10 and 3.11) and actions
-  version, and update integration test to use new redwood release with Tutor.
+- **Redwood Support**: Upgrade requirements base on the edx-platform Redwood
+  release, update GitHub workflows with new Python (3.10 and 3.11) and actions
+  version, and update the Integration Tests to use new Redwood release with
+  Tutor.
 
 ## v4.1.0 - 2024-03-19
 
