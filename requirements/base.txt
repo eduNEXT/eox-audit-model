@@ -35,7 +35,6 @@ click-repl==0.3.0
 django==4.2.13
     # via
     #   -c https://raw.githubusercontent.com/openedx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   -c requirements/constraints.txt
     #   -r requirements/base.in
     #   django-crum
     #   jsonfield

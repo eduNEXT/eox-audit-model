@@ -55,7 +55,6 @@ dill==0.3.8
 django==4.2.13
     # via
     #   -c https://raw.githubusercontent.com/openedx/edx-lint/master/edx_lint/files/common_constraints.txt
-    #   -c requirements/constraints.txt
     #   -r requirements/base.txt
     #   django-crum
     #   jsonfield
