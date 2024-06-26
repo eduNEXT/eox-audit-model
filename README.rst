@@ -1,6 +1,6 @@
-==========================
-Django edunext audit model
-==========================
+===================
+Edunext Audit Model
+===================
 
 |Maintainance Badge| |Test Badge| |PyPI Badge|
 
@@ -11,42 +11,47 @@ Django edunext audit model
 .. |PyPI Badge| image:: https://img.shields.io/pypi/v/eox-audit-model?label=PyPI
    :alt: PyPI - Version
    
-Eox audit model is a Django application that provides an audit model for tracking and logging changes within the Open edX platform.
-This plugin is designed to help administrators and developers maintain a comprehensive audit trail of various operations, ensuring better monitoring.
+Eox-audit-model is a Django application designed to provide an audit model for tracking and logging changes within the Open edX platform.
+This plugin saves information in the database about executed methods, creating a detailed audit trail of various operations. Developed as part of
+the Edunext Open Extensions (EOX), **eox-audit-model** assists administrators and developers in maintaining comprehensive monitoring and ensuring
+better oversight of the platform's activities.
 
 Features
 ========
 
-- Tracks changes to specified models.
-- Logs detailed information about create, update, and delete operations.
+- **Detailed Audit Logging**: Capture comprehensive logs of method executions, including parameters, results, and any generated logs.
+- **Automatic Traceback Capture**: Automatically log traceback information if an exception occurs during method execution.
+- **User Tracking**: Record the user who initiated the method, providing accountability and traceability.
+- **Flexible Logging Mechanisms**: Log actions either by directly calling a method or using a decorator for convenience.
+- **Customizable Notes**: Add custom notes to logs for additional context and information.
+- **Comprehensive Monitoring**: Maintain an extensive audit trail for better monitoring and oversight of platform activities.
 
 Installation
 ============
 
 1. Install eox-audit-model:
 
-    .. code-block:: python
-
+   .. code-block:: python
+      
       pip install eox-audit-model
 
 2. Add “eox_audit_model” to your INSTALLED_APPS:
 
-    .. code-block:: python
-
+   .. code-block:: python
+      
       INSTALLED_APPS = [
-              ...
-            'eox_audit_model',
+          ...,
+          "eox_audit_model",
       ]
 
 3. Run Migrate:
 
-    .. code-block:: python
+   .. code-block:: python
 
       python manage.py migrate eox_audit_model
 
-
-Open edX compatibility notes
-----------------------------
+Compatibility notes
+-------------------
 
 +------------------+---------------+
 | Open edX Release | Version       |
@@ -70,25 +75,36 @@ Open edX compatibility notes
 | Redwood          | >=4.2.0       |
 +------------------+---------------+
 
-
 Usage
 =====
 
-Audit any execution of a method or function. This will create a database register with the following information:
+Eox-audit-model can be used to audit any execution of a method or function. This will create a database record with the following information:
 
-#. **Status**: If the process was successful or not.
-#. **Action**: The given string to identify the process.
-#. **Timestamp**: The execute date.
-#. **Method name**: Method or function name.
-#. **Captured log**: Logs generated in the execution.
-#. **Traceback log**: If there is an exception, this will contain the traceback.
-#. **Site**: Current site.
-#. **Performer**: The user who started the method; depends on the *request.user*.
-#. **Input**: The values used to execute the method.
-#. **Output**: The value returned by the method.
-#. **Ip**: Current IP.
+- **Status**: If the process was successful or not.
+- **Action**: The given string to identify the process.
+- **Timestamp**: The execute date.
+- **Method name**: Method or function name.
+- **Captured log**: Logs generated in the execution.
+- **Traceback log**: If there is an exception, this will contain the traceback.
+- **Site**: Current site.
+- **Performer**: The user who started the method; depends on the *request.user*.
+- **Input**: The values used to execute the method.
+- **Output**: The value returned by the method.
+- **Ip**: Current IP.
 
-- Example:
+There are two primary ways to use the plugin:
+
+Direct Method Call
+------------------
+
+You can log an action directly by importing the model and calling the `execute_action` method. This method requires several parameters to log the information:
+
+- `action`: A string describing the action, e.g., `'Add view info'`.
+- `method`: The method being executed.
+- `parameters`: A dictionary containing positional arguments (`args`) and keyword arguments (`kwargs`).
+- `notes`: An optional list of dictionaries for storing custom information.
+
+Example:
 
 .. code-block:: python
 
@@ -109,11 +125,13 @@ Audit any execution of a method or function. This will create a database registe
     expected_value = AuditModel.execute_action(action, any_method, parameters)
     ...
 
-Decorator
----------
-There is a simple decorator, which can perform the same process.
+Using the Decorator
+-------------------
 
-- Example:
+The plugin also provides a decorator that can be used to automatically log method executions. The decorator
+handles calling the `execute_action` method behind the scenes and saves the information for you.
+
+Example:
 
 .. code-block:: python
 
