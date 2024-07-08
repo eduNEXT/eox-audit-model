@@ -13,7 +13,7 @@ Edunext Audit Model
    
 Eox-audit-model is a Django application designed to provide an audit model for tracking and logging changes within the Open edX platform.
 This plugin saves information in the database about executed methods, creating a detailed audit trail of various operations. Developed as part of
-the Edunext Open Extensions (EOX), **eox-audit-model** assists administrators and developers in maintaining comprehensive monitoring and ensuring
+the Edunext Open edX Extensions (EOX), **eox-audit-model** assists administrators and developers in maintaining comprehensive monitoring and ensuring
 better oversight of the platform's activities.
 
 Features
