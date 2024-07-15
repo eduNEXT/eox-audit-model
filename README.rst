@@ -29,26 +29,29 @@ Features
 Installation
 ============
 
-1. Install eox-audit-model:
+1. Install eox-audit-model in Tutor with `OPENEDX_EXTRA_PIP_REQUIREMENTS`` setting in the `config.yml`:
 
-   .. code-block:: python
+   .. code-block:: yml
       
-      pip install eox-audit-model
+      OPENEDX_EXTRA_PIP_REQUIREMENTS:
+         - eox-audit-model=={{version}}
 
-2. Add “eox_audit_model” to your INSTALLED_APPS:
+2. Add eox_audit_model to `INSTALLED_APPS``, you can create a `Tutor plugin <https://docs.tutor.edly.io/tutorials/plugin.html>`_, e.g.:
 
-   .. code-block:: python
+   .. code-block:: yml
       
-      INSTALLED_APPS = [
-          ...,
-          "eox_audit_model",
-      ]
+      from tutor import hooks
 
-3. Run Migrate:
+      hooks.Filters.ENV_PATCHES.add_item(
+         (
+            "openedx-lms-common-settings",
+            "settings.INSTALLED_APPS.append('eox_audit_model.apps.EoxAuditModelConfig')"
+         )
+      )     
 
-   .. code-block:: python
+3. Save the configuration with ``tutor config save``.
 
-      python manage.py migrate eox_audit_model
+4. Build the image and launch your platform with ``tutor local launch``.
 
 Compatibility notes
 -------------------
@@ -128,7 +131,7 @@ Example:
 Using the Decorator
 -------------------
 
-The plugin also provides a decorator that can be used to automatically log method executions. The decorator
+The plugin also provides a decorator that can be used to log method executions automatically. The decorator
 handles calling the `execute_action` method behind the scenes and saves the information for you.
 
 Example:
