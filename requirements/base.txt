@@ -14,7 +14,7 @@ backports-zoneinfo[tzdata]==0.2.1 ; python_version < "3.9"
     #   celery
     #   django
     #   kombu
-billiard==4.2.0
+billiard==4.2.1
     # via celery
 celery==5.4.0
     # via
@@ -32,7 +32,7 @@ click-plugins==1.1.1
     # via celery
 click-repl==0.3.0
     # via celery
-django==4.2.13
+django==4.2.16
     # via
     #   -c https://raw.githubusercontent.com/openedx/edx-lint/master/edx_lint/files/common_constraints.txt
     #   -r requirements/base.in
@@ -44,9 +44,9 @@ django-ipware==7.0.1
     # via -r requirements/base.in
 jsonfield==3.1.0
     # via -r requirements/base.in
-kombu==5.3.7
+kombu==5.4.2
     # via celery
-prompt-toolkit==3.0.47
+prompt-toolkit==3.0.48
     # via click-repl
 python-dateutil==2.9.0.post0
     # via celery
@@ -54,13 +54,13 @@ python-ipware==3.0.0
     # via django-ipware
 six==1.16.0
     # via python-dateutil
-sqlparse==0.5.0
+sqlparse==0.5.1
     # via django
 typing-extensions==4.12.2
     # via
     #   asgiref
     #   kombu
-tzdata==2024.1
+tzdata==2024.2
     # via
     #   backports-zoneinfo
     #   celery
