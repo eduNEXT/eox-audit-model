@@ -17,6 +17,3 @@ pylint<3.0
 pycodestyle<2.9.0
 pytz<2024.1
 testfixtures==8.2.0
-
-# backports.zoneinfo is only needed for Python < 3.9
-backports.zoneinfo; python_version<'3.9'
