@@ -6,13 +6,15 @@
 #
 amqp==5.3.1
     # via kombu
-asgiref==3.8.1
+asgiref==3.10.0
     # via django
-billiard==4.2.1
+billiard==4.2.2
     # via celery
 celery==5.5.3
-    # via -r requirements/base.in
-click==8.2.1
+    # via
+    #   -c /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/constraints.txt
+    #   -r requirements/base.in
+click==8.3.0
     # via
     #   celery
     #   click-didyoumean
@@ -20,13 +22,13 @@ click==8.2.1
     #   click-repl
 click-didyoumean==0.3.1
     # via celery
-click-plugins==1.1.1
+click-plugins==1.1.1.2
     # via celery
 click-repl==0.3.0
     # via celery
-django==4.2.23
+django==5.2.7
     # via
-    #   -c https://raw.githubusercontent.com/openedx/edx-lint/master/edx_lint/files/common_constraints.txt
+    #   -c /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/constraints.txt
     #   -r requirements/base.in
     #   django-crum
     #   jsonfield
@@ -34,13 +36,13 @@ django-crum==0.7.9
     # via -r requirements/base.in
 django-ipware==7.0.1
     # via -r requirements/base.in
-jsonfield==3.1.0
+jsonfield==3.2.0
     # via -r requirements/base.in
 kombu==5.5.4
     # via celery
 packaging==25.0
     # via kombu
-prompt-toolkit==3.0.51
+prompt-toolkit==3.0.52
     # via click-repl
 python-dateutil==2.9.0.post0
     # via celery
@@ -57,5 +59,5 @@ vine==5.1.0
     #   amqp
     #   celery
     #   kombu
-wcwidth==0.2.13
+wcwidth==0.2.14
     # via prompt-toolkit
