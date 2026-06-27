@@ -202,8 +202,8 @@ class TestAuditModel(TestCase):
         with LogCapture() as test_logs:
             result = AuditModel.execute_action(action, method, parameters)
 
-        test_logs.setFormatter(logging.Formatter(LOG_FORMAT))
-        logs = [test_logs.format(record) for record in test_logs.records]
+        formatter = logging.Formatter(LOG_FORMAT)
+        logs = [formatter.format(record) for record in test_logs.records]
         self.assertEqual(expected_value, result)
         create_mock.delay.assert_called_once_with(
             action=action,
@@ -241,8 +241,8 @@ class TestAuditModel(TestCase):
             with self.assertRaises(Exception):
                 AuditModel.execute_action(action, method, parameters)
 
-        test_logs.setFormatter(logging.Formatter(LOG_FORMAT))
-        logs = [test_logs.format(record) for record in test_logs.records]
+        formatter = logging.Formatter(LOG_FORMAT)
+        logs = [formatter.format(record) for record in test_logs.records]
         traceback_mock.format_exc.assert_called_once()
         create_mock.delay.assert_called_once_with(
             action=action,
