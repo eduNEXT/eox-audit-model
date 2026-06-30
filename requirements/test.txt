@@ -6,115 +6,121 @@
 #
 amqp==5.3.1
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   kombu
-asgiref==3.10.0
+asgiref==3.11.1
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   django
 astroid==3.3.11
     # via pylint
-billiard==4.2.2
+billiard==4.2.4
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   celery
-celery==5.5.3
+celery==5.6.3
     # via
-    #   -c /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/constraints.txt
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
-click==8.3.0
+    #   -c requirements/constraints.txt
+    #   -r requirements/base.txt
+click==8.4.2
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   celery
     #   click-didyoumean
     #   click-plugins
     #   click-repl
 click-didyoumean==0.3.1
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   celery
 click-plugins==1.1.1.2
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   celery
 click-repl==0.3.0
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   celery
-coverage==7.10.7
+coverage==7.14.3
     # via -r requirements/test.in
-dill==0.4.0
+dill==0.4.1
     # via pylint
     # via
-    #   -c /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/constraints.txt
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -c requirements/constraints.txt
+    #   -r requirements/base.txt
     #   django-crum
     #   jsonfield
 django-crum==0.7.9
-    # via -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    # via -r requirements/base.txt
 django-ipware==7.0.1
-    # via -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    # via -r requirements/base.txt
 isort==6.1.0
     # via pylint
 jsonfield==3.2.0
-    # via -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
-kombu==5.5.4
+    # via -r requirements/base.txt
+kombu==5.6.2
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   celery
 mccabe==0.7.0
     # via pylint
 mock==5.2.0
     # via -r requirements/test.in
-packaging==25.0
+packaging==26.2
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   kombu
-platformdirs==4.5.0
+platformdirs==4.10.0
     # via pylint
 prompt-toolkit==3.0.52
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   click-repl
 pycodestyle==2.14.0
     # via -r requirements/test.in
 pylint==3.3.9
     # via
-    #   -c /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/constraints.txt
+    #   -c requirements/constraints.txt
     #   -r requirements/test.in
 python-dateutil==2.9.0.post0
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   celery
 python-ipware==3.0.0
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   django-ipware
 pyyaml==6.0.3
     # via -r requirements/test.in
 six==1.17.0
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   python-dateutil
-sqlparse==0.5.3
+sqlparse==0.5.5
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   django
-testfixtures==9.2.0
+testfixtures==12.2.0
     # via -r requirements/test.in
-tomlkit==0.13.3
+tomlkit==0.15.0
     # via pylint
-tzdata==2025.2
+typing-extensions==4.15.0
+    # via testfixtures
+tzdata==2026.2
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   kombu
+tzlocal==5.4.3
+    # via
+    #   -r requirements/base.txt
+    #   celery
 vine==5.1.0
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   amqp
     #   celery
     #   kombu
-wcwidth==0.2.14
+wcwidth==0.8.1
     # via
-    #   -r /home/jignaciopm/eduNEXT/eox-plugins/eox-audit-model/requirements/base.txt
+    #   -r requirements/base.txt
     #   prompt-toolkit
